@@ -1,0 +1,3 @@
+remove images size less than 30kb
+
+find . -type  f   \( -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" \) -size -30k -exec rm {} \;
