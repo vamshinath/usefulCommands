@@ -1,5 +1,8 @@
 remove images size less than 30kb.
-
 find . -type  f   \( -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" \) -size -30k -exec rm {} \;
 
+#restart audio
 pulseaudio -k && sudo alsa force-reload
+
+#video to images with 10 frames per seconds
+ffmpeg -i inputfile.avi -r 10 -f image2 image-%3d.jpeg
